@@ -19,6 +19,7 @@ steps:
       curl -o ballerina.msi https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-windows-x64.msi
       msiexec /i ballerina.msi /quiet /qr
       del ballerina.msi
+      $env:Path += ";C:\Program Files\Ballerina\bin"
       bal -v
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
