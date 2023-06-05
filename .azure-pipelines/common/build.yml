@@ -25,6 +25,13 @@ steps:
       C:\Program Files\Ballerina\bin\bal -v
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
+- script: |
+    dir "C:\Program Files\Ballerina\bin"
+  displayName: Check Ballerina installation
+
+- script: |
+    "C:\Program Files\Ballerina\bin\bal" -v
+  displayName: Verify Ballerina installation
 
 - script: |
     bal -v
