@@ -22,7 +22,7 @@ steps:
       del ballerina.msi
       dir "C:\Program Files\Ballerina"
       echo "##vso[task.setvariable variable=PATH]C:\Program Files\Ballerina\bin;$(PATH)"
-      "C:\Program Files\Ballerina\bin\bal" -v
+      # "C:\Program Files\Ballerina\bin\bal" -v
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
 
