@@ -21,6 +21,9 @@ steps:
       del ballerina.msi
       dir C:\Program Files\Ballerina
       $env:Path += ";C:\Program Files\Ballerina\bin"
-      bal -v
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
+
+- script: |
+    bal -v
+  displayName: Display version
