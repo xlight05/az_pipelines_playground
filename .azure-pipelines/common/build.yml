@@ -11,6 +11,8 @@ steps:
     curl -o ballerina.pkg 'https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-macos-x64.pkg'
     sudo installer -pkg ballerina.pkg -target /
     rm -f ballerina.pkg
+    echo $PATH
+    ls Library/Ballerina
   displayName: Install Ballerina(MacOS)
   condition: eq(variables['Agent.OS'], 'Darwin')
 
