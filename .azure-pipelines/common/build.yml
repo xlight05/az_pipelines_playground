@@ -1,0 +1,24 @@
+steps:
+- script: |
+    curl -o ballerina.deb 'https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-linux-x64.deb'
+    sudo dpkg -i ballerina.deb
+    rm -f ballerina.deb
+    bal -v
+  displayName: Install Ballerina(Linux)
+  condition: eq(variables['Agent.OS'], 'Linux')
+
+- script: |
+    curl -o ballerina.pkg 'https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-macos-x64.pkg'
+    sudo installer -pkg ballerina.pkg
+    rm -f ballerina.pkg
+    bal -v
+  displayName: Install Ballerina(MacOS)
+  condition: eq(variables['Agent.OS'], 'macOS')
+
+- script: |
+      curl -o ballerina.msi https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-windows-x64.msi
+      msiexec /i ballerina.msi /qn
+      del ballerina.msi
+      bal -v
+  displayName: Install Ballerina(Windows)
+  condition: eq(variables['Agent.OS'], 'Windows')

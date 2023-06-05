@@ -1,0 +1,23 @@
+jobs:
+- job: Windows
+  pool:
+    vmImage: windows-latest
+  steps:
+  - template: common/build.yml
+
+- job: Linux
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - template: common/build.yml
+
+- job: macOS
+  pool:
+    vmImage: macOS-latest
+  steps:
+  - template: common/build.yml
+
+trigger:
+  branches:
+    include:
+    - '*'
