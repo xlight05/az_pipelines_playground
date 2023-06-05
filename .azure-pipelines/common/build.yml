@@ -13,6 +13,7 @@ steps:
     rm -f ballerina.pkg
     echo $PATH
     ls Library/Ballerina
+    sudo find / -name "bal"
   displayName: Install Ballerina(MacOS)
   condition: eq(variables['Agent.OS'], 'Darwin')
 
@@ -21,6 +22,7 @@ steps:
       msiexec /i ballerina.msi /quiet /qr /L*V "C:\Temp\msilog.log"
       del ballerina.msi
       type C:\Temp\msilog.log
+      dir /s "C:bal.bat"
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
 
