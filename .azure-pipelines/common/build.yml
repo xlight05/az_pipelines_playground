@@ -12,7 +12,7 @@ steps:
     sudo installer -pkg ballerina.pkg -target /
     rm -f ballerina.pkg
     echo $PATH
-    export PATH=$PATH:/Library/Ballerina/bin
+    echo '##vso[task.prependpath]/Library/Ballerina/bin'
     /Library/Ballerina/bin/bal -v
   displayName: Install Ballerina(MacOS)
   condition: eq(variables['Agent.OS'], 'Darwin')
@@ -21,8 +21,7 @@ steps:
       curl -o ballerina.msi https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-windows-x64.msi
       msiexec /i ballerina.msi /quiet /qr /L*V "C:\Temp\msilog.log"
       del ballerina.msi
-      type C:\Temp\msilog.log
-      dir /s "C:bal.bat"
+      echo '##vso[task.prependpath]C:\Program Files\Ballerina\distributions\ballerina-2201.6.0\bin'
   displayName: Install Ballerina(Windows)
   condition: eq(variables['Agent.OS'], 'Windows_NT')
 
