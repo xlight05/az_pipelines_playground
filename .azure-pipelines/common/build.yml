@@ -15,7 +15,7 @@ steps:
   displayName: Install Ballerina(MacOS)
   condition: eq(variables['Agent.OS'], 'Darwin')
 
-- powershell: |
+- script: |
       curl -o ballerina.msi https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-windows-x64.msi
       msiexec /i ballerina.msi /quiet /qr
       del ballerina.msi
