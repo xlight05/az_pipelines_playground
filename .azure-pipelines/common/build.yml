@@ -12,8 +12,8 @@ steps:
     sudo installer -pkg ballerina.pkg -target /
     rm -f ballerina.pkg
     echo $PATH
-    ls Library/Ballerina
-    sudo find / -name "bal"
+    export PATH=$PATH:/Library/Ballerina/bin
+    /Library/Ballerina/bin/bal -v
   displayName: Install Ballerina(MacOS)
   condition: eq(variables['Agent.OS'], 'Darwin')
 
