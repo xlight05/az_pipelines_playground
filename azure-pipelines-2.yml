@@ -14,7 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 - task: balbuildandreleasetask@0
   inputs:
-    samplestring: 'https://bal-installers.s3.amazonaws.com/ballerina-2201.6.0-swan-lake-macos-x64.pkg'
+    samplestring: 'https://dist.ballerina.io/downloads/2201.6.0/ballerina-2201.6.0-swan-lake-macos-x64.pkg'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
