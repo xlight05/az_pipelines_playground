@@ -1,6 +1,6 @@
 steps:
 - task: balbuildandreleasetask@0
   inputs:
-    samplestring: 'Meow'
+    version: '2201.6.0'
 - script: bal -v
   displayName: 'Ballerina version'
