@@ -1,5 +1,5 @@
 steps:
-- task: UseBallerina@1
+- task: UseBallerina@0
   inputs:
     version: '2201.6.0'
 - script: bal -v
