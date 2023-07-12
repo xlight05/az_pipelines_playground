@@ -4,3 +4,5 @@ steps:
     version: '2201.6.0'
 - script: bal -v
   displayName: 'Ballerina version'
+- script: (cd test_project && bal run)
+  displayName: 'Ballerina run'
